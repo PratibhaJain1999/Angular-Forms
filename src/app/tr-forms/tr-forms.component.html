@@ -1,0 +1,73 @@
+<p>tr-forms works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8">
+            <form (ngSubmit)="onSubmit()" #form="ngForm" >
+                <div id="user-form">
+                    <div class="form-group">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control" id="firstname" ngModel="pratibha" name="firstname" required  #firstname="ngModel">
+                        <span class="defective-blocks" *ngIf="firstname.status=='INVALID' && firstname.touched"> Please enter a correct firstname.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Lastname</label>
+                        <input type="text" class="form-control" id="lastName" ngModel name="lastname" required  #lastname="ngModel">
+                        <span class="defective-blocks" *ngIf="lastname.status=='INVALID' && lastname.touched"> Please enter a correct lastname.</span>
+                    </div>
+                    <button type="button" class="btn btn-default"(click)="lastnameSuggestion()"> Your Lastname is:</button>
+                    <div class="form-group">
+                        <label for="firstname">Email</label>
+                        <input type="email" class="form-control" id="email" ngModel name="email" required   #email="ngModel">
+                        <span class="defective-blocks" *ngIf="email.status=='INVALID' && email.touched"> Please enter a correct email.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" ngModel name="password" required  #password="ngModel">
+                        <span class="defective-blocks" *ngIf="password.status=='INVALID' && password.touched"> Please enter a correct password.</span>
+                    </div>
+                    <div class="form-group">
+                        <label *ngFor="let gender of genders">
+                            <input type="radio" name="gender" [value]="gender" required ngModel>{{gender}}
+                           
+                        </label>
+                    </div>
+                   </div>
+                    <div class="form-group">
+                        <label for="secret">Secret Questions</label>
+                        <select id="secret" class="form-control" id="secret" ngModel name="secret">
+                            <option value="phone">Your first phone?</option>
+                            <option value="teacher">Your favourite teacher?</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" cols="15" name="ask" [(ngModel)]="quesAns"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <p>This is your {{quesAns}}</p>
+                        </div>
+                        <div class="" *ngIf="onFormSubmit">
+                            <p>This is {{employerName.firstname}}</p>
+                            <p>This  is {{employerName.lastname}}</p>
+                            <p>This is {{employerName.email}}</p>
+                            <p>This is {{employerName.password}}</p>
+                            <p>This is {{employerName.gender}}</p>
+                            <p>This is {{employerName.ques}}</p>
+                        </div>
+                <button type="submit" class="btn btn-primary" [disabled] ="form.status=='INVALID'">Submit</button>
+              
+
+            </form>
+        </div>
+    </div>
+</div>
+<!--/*
+11) one way data binding in TD form 
+2) two way data binding in TD form
+3) Radio control in a TD form
+4) showing the form values
+5) setting a value using setValue() or patchValue()
+6) Reseting the form.
+
+*/
+
+*/ -->

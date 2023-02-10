@@ -1,0 +1,75 @@
+<!-- <p>reactive-forms works!</p> -->
+<!-- <p>tr-forms works!</p> -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8">
+            <form (ngSubmit)="onSubmit()"[formGroup]="signInForm">
+                <div id="user-form">
+                    <div class="form-group">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control" id="firstname"  name="firstname" formControlName="firstname"  >
+                        <span class="defective-blocks" *ngIf="signInForm.get('firstname')?.status=='INVALID' && signInForm.get('firstname')?.touched"> Please enter a correct firstname.</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Lastname</label>
+                        <input type="text" class="form-control" id="lastName" name="lastname"formControlName="lastname" >
+                        <span class="defective-blocks" *ngIf="signInForm.get('lastname')?.status=='INVALID' && signInForm.get('lastname')?.touched"> Please enter a correct lastname.</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">Email</label>
+                        <input type="email" class="form-control" id="email"  name="email"formControlName="email" >
+                        <span class="defective-blocks" *ngIf="signInForm.get('email')?.status=='INVALID' && signInForm.get('email')?.touched"> Please enter a correct email.</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" formControlName="password">
+                        <span class="defective-blocks" *ngIf="signInForm.get('password')?.status=='INVALID' && signInForm.get('password')?.touched"> Please enter a correct password.</span>
+
+                    </div>
+                    <div class="form-group">
+                        <label *ngFor="let gender of genders">
+                            <input type="radio" name="gender" [value]="gender">{{gender}}
+                            <span class="defective-blocks" *ngIf="signInForm.get('gender')?.status=='INVALID' && signInForm.get('gender')?.touched"> Please enter a correct gender.</span>
+
+                           
+                        </label>
+                        <div class="form-group">
+                            <label for="firstname">Age</label>
+                            <input type="number" class="form-control" id="age"  name="age"formControlName="age" >
+                            <span class="defective-blocks" *ngIf="signInForm.get('age')?.status=='INVALID' && signInForm.get('age')?.touched"> Please enter a correct age.</span>
+
+                           
+                        </div>
+                    </div>
+                   </div>
+                    <div class="form-group">
+                        <label for="secret">Secret Questions</label>
+                        <select id="secret" class="form-control" id="secret" name="secret">
+                            <option value="phone">Your first phone?</option>
+                            <option value="teacher">Your favourite teacher?</option>
+                        </select>
+                        </div>
+                     
+                        
+                <button type="submit" class="btn btn-primary" [disabled] ="signInForm.status=='INVALID'">Submit</button>
+              
+
+            </form>
+        </div>
+    </div>
+</div>
+<!--/*
+11) one way data binding in TD form 
+2) two way data binding in TD form
+3) Radio control in a TD form
+4) showing the form values
+5) setting a value using setValue() or patchValue()
+6) Reseting the form.
+
+*/
+
+*/ -->
+
