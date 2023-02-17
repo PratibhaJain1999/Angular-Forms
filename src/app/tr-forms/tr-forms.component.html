@@ -13,8 +13,9 @@
                         <label for="lastName">Lastname</label>
                         <input type="text" class="form-control" id="lastName" ngModel name="lastname" required  #lastname="ngModel">
                         <span class="defective-blocks" *ngIf="lastname.status=='INVALID' && lastname.touched"> Please enter a correct lastname.</span>
+                        <button type="button" class="btn btn-default" (click)="lastnameSuggestion()"> Your Lastname is:</button>
+
                     </div>
-                    <button type="button" class="btn btn-default"(click)="lastnameSuggestion()"> Your Lastname is:</button>
                     <div class="form-group">
                         <label for="firstname">Email</label>
                         <input type="email" class="form-control" id="email" ngModel name="email" required   #email="ngModel">
